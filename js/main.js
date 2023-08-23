@@ -10,10 +10,19 @@ function onToGallery() {
     renderGallery()
 }
 
-function onDownloadImg(elLink) {
+function readyForDownload() {
     const { selectedImgId, lines } = getMeme()
+    const elModal = document.querySelector('dialog')
     drawImg(selectedImgId)
-    drawText(lines[0].txt, 10, 50, lines[0].color, lines[0].size)
-    drawText(lines[1].txt, 10, 300, lines[1].color, lines[1].size)
-    setTimeout(downloadImg, 300, elLink)
+    lines.forEach(line => {
+        drawText(line.txt, 10, line.pos, line.color, line.size)
+    })
+    elModal.showModal()
+}
+
+
+function onDownloadImg(elLink) {
+    downloadImg(elLink)
+    const elModal = document.querySelector('dialog')
+    elModal.close()
 } 

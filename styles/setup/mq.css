@@ -8,7 +8,8 @@
 /* MEDIUM */
 @media (min-width: 815px) {
     .gallery {
-        grid-auto-flow: column;
+        /* grid-auto-flow: column; */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .editor {
@@ -41,8 +42,15 @@
         width: 100%;
     }
 
-    .a-download {
+    .btn-download {
         grid-column: 3;
         grid-row: 2;
+    }
+}
+
+/* LARGE */
+@media (min-width: 1100px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }

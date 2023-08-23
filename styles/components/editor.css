@@ -51,10 +51,20 @@
     grid-row: 3;
 } */
 
+.btn-download {
+    place-self: center;
+}
+
 .a-download {
     place-self: center;
 }
 
 .hide {
     display: none;
+}
+
+dialog {
+    width: 50vh;
+    height: 20vh;
+    background-color: aqua;
 }

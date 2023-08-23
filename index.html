@@ -33,7 +33,11 @@
             </div>
 
         </div>
-        <a href="#" class="a-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
+        <button class="btn-download" onclick="readyForDownload()">Download</button>
+        <dialog>
+            <h1>Ready For Download</h1>
+            <a href="#" class="a-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download Here</a>
+        </dialog>
     </section>
 
     <script src="js/services/util.service.js"></script>

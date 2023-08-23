@@ -8,11 +8,14 @@ let gCtx
 function renderMeme() {
     const currMeme = getMeme()
     const { selectedImgId, selectedLineIdx, lines } = currMeme
+    const pos = lines[selectedLineIdx].pos
+    const fontSize = lines[selectedLineIdx].size
     setPlaceHolder()
     drawImg(selectedImgId)
-    drawText(lines[0].txt, 10, 50, lines[0].color, lines[0].size)
-    drawText(lines[1].txt, 10, 300, lines[1].color, lines[1].size)
-    drawOutline(selectedLineIdx)
+    lines.forEach(line => {
+        drawText(line.txt, 10, line.pos, line.color, line.size)
+    })
+    drawOutline(selectedLineIdx, pos, fontSize)
 }
 
 function onWriteTxt(txt) {
@@ -44,14 +47,11 @@ function resizeCanvas() {
     renderMeme()
 }
 
-function drawOutline(lineIdx) {
-    let y = 10
-    if (lineIdx === 1) {
-        y = 260
-    }
+function drawOutline(lineIdx, pos, size) {
+    let y = pos - size
     setTimeout(() => {
         gCtx.strokeStyle = 'white'
-        gCtx.strokeRect(5, y, 340, 60)
+        gCtx.strokeRect(5, y, 340, 1.5 * size)
     }, 50)
 }
 
@@ -97,13 +97,17 @@ function addTouchListeners() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    if (pos.x > 5 && pos.x < 345 && pos.y > 10 && pos.y < 70) switchLine(0)
-    if (pos.x > 5 && pos.x < 345 && pos.y > 260 && pos.y < 320) switchLine(1)
-    // console.log(pos)
+    const { lines } = getMeme()
+    const clickedLineIdx = lines.findIndex(line => {
+        return pos.x > 5 && pos.x < 345 && pos.y > (line.pos - line.size)
+            && pos.y < (line.pos + line.size)
+    })
+    if (clickedLineIdx === -1) return
+    switchLine(clickedLineIdx)
     renderMeme()
 }
 
-function setPlaceHolder(isClear){
+function setPlaceHolder(isClear) {
     const { selectedLineIdx, lines } = getMeme()
     const elInputTxt = document.querySelector('.text-box')
     elInputTxt.value = lines[selectedLineIdx].txt
