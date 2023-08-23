@@ -78,6 +78,12 @@ function onSwitchLine() {
     renderMeme()
 }
 
+function onRemoveLine(){
+    removeLine()
+    setPlaceHolder()
+    renderMeme()
+}
+
 function addListeners() {
     addMouseListeners()
     addTouchListeners()

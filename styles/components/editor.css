@@ -22,6 +22,32 @@
     align-items: center;
 }
 
+.line-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-line {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+}
+
+.switch-line {
+    width: 30px;
+    height: 30px;
+    transform: rotate(90deg);
+    background-color: rgb(25, 25, 88);
+}
+
+.remove-line {
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    background-color: red;
+}
+
 .btn-color-change {
     grid-row: 1;
 }
@@ -66,5 +92,5 @@
 dialog {
     width: 50vh;
     height: 20vh;
-    background-color: aqua;
+    background-color: rgb(9, 114, 114);
 }

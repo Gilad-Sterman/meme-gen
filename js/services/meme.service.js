@@ -84,6 +84,12 @@ function switchLine(clickedLine) {
     return gMeme.lines[gMeme.selectedLineIdx].size
 }
 
+function removeLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    gMeme.selectedLineIdx = 0
+    gNextLineIdx = gMeme.lines.length
+}
+
 function createLine() {
     return {
         txt: 'Enter New Text:',
