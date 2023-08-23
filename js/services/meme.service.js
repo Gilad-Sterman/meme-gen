@@ -8,12 +8,18 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'I sometimes eat Falafel',
+            txt: 'Enter Your Text:',
             size: 20,
             color: 'red'
+        },
+        {
+            txt: '',
+            size: 20,
+            color: 'black'
         }
     ]
 }
+
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
 function getMeme() {
@@ -27,10 +33,29 @@ function getImgs() {
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
     gMeme.selectedLineIdx = 0
-    gMeme.lines[0].txt = 'Enter Your Text:'
 }
 
 function setLIneTxt(txt) {
     const { selectedLineIdx } = gMeme
     gMeme.lines[selectedLineIdx].txt = txt
+}
+
+function setColor(val) {
+    gMeme.lines[gMeme.selectedLineIdx].color = val
+}
+
+function fontChange(val) {
+    gMeme.lines[gMeme.selectedLineIdx].size += val
+    return gMeme.lines[gMeme.selectedLineIdx].size
+}
+
+function addLine() {
+    gMeme.selectedLineIdx++
+    gMeme.lines[gMeme.selectedLineIdx].txt = 'Enter Second Line'
+    return gMeme.lines[gMeme.selectedLineIdx].size
+}
+
+function switchLine() {
+    gMeme.selectedLineIdx = (gMeme.selectedLineIdx === 1) ? 0 : 1
+    return gMeme.lines[gMeme.selectedLineIdx].size
 }

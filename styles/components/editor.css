@@ -7,6 +7,18 @@
     justify-content: center;
 }
 
+.btn-font-change {
+    width: 30px;
+}
+
+.add-line {
+    width: fit-content;
+}
+
+.a-download {
+    place-self: center;
+}
+
 .hide {
     display: none;
 }
