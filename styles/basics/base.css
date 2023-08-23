@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(10, 129, 129);
+}
+
+img {
+    width: 100%;
+}
+
+img:hover {
+    scale: 1.05;
+}
+
+a {
+    letter-spacing: .2em;
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: gray;
+}

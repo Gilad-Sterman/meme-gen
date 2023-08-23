@@ -1,0 +1,12 @@
+.editor {
+    gap: 10px;
+}
+
+.canvas-container {
+    background-color: black;
+    justify-content: center;
+}
+
+.hide {
+    display: none;
+}

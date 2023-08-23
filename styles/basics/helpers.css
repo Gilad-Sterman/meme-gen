@@ -1,0 +1,19 @@
+.grid {
+    display: grid;
+}
+
+.grid.grid-column {
+    grid-auto-flow: column;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.flex-column {
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}

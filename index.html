@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Meme Genaretor</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
-    <h1>Hello Meme Gen</h1>
+
+<body onload="onInit()">
+    <header class="main-header grid grid-column">
+        <a href="#" class="logo">MEME-O</a>
+        <button class="btn-gallery" onclick="onToGallery()">Gallery</button>
+        <button class="btn-about">About</button>
+    </header>
+    <section class="gallery grid grid-column"></section>
+    <section class="editor flex flex-column">
+        <div class="canvas-container flex">
+            <canvas width="350" height="350" style="background-color: white;"></canvas>
+        </div>
+        <input type="text" placeholder="Enter Text Here" oninput="onWriteTxt(value)">
+    </section>
+
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/gallery.controller.js"></script>
+    <script src="js/meme.controller.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
