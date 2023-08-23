@@ -1,0 +1,48 @@
+/* MOBILE ONLY */
+@media (max-width: 815px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* MEDIUM */
+@media (min-width: 815px) {
+    .gallery {
+        grid-auto-flow: column;
+    }
+
+    .editor {
+        display: grid;
+        grid-template-columns: 20px 1fr 1fr 20px;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .canvas-container {
+        grid-column: 2;
+        grid-row: 1 / 3;
+    }
+
+    .controls {
+        grid-column: 3;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-self: self-start;
+        justify-self: center;
+    }
+
+    .text-box {
+        grid-column: 3;
+        grid-row: 1;
+        min-width: 70px;
+        width: 100%;
+    }
+
+    .a-download {
+        grid-column: 3;
+        grid-row: 2;
+    }
+}

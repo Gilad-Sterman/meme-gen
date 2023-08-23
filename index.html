@@ -14,23 +14,26 @@
         <button class="btn-gallery" onclick="onToGallery()">Gallery</button>
         <button class="btn-about">About</button>
     </header>
-    <section class="gallery grid grid-column"></section>
+    <section class="gallery grid"></section>
     <section class="editor flex flex-column">
         <div class="canvas-container flex">
             <canvas width="350" height="350" style="background-color: white;"></canvas>
         </div>
-        <input type="text" placeholder="Enter Text Here" oninput="onWriteTxt(value)">
-        <input type="color" oninput="onSetColor(value)">
-        <div class="font-change">
-            <button class="btn-font-change" onclick="onFontChange(1)">+</button>
-            <span class="font-size">20</span>
-            <button class="btn-font-change" onclick="onFontChange(-1)">-</button>
+        <div class="controls">
+            <input class="text-box" type="text" placeholder="Enter Text Here" oninput="onWriteTxt(value)">
+            <div class="line-controls">
+                <button class="add-line" onclick="onAddLine()">+</button>
+                <button class="switch-line" onclick="onSwitchLine()">⇋</button>
+            </div>
+            <div class="font-change">
+                <input class="btn-color-change" type="color" oninput="onSetColor(value)">
+                <button class="btn-font-change" onclick="onFontChange(1)">A+</button>
+                <span class="font-size">20</span>
+                <button class="btn-font-change" onclick="onFontChange(-1)">A-</button>
+            </div>
+
         </div>
-        <div class="line-controls">
-            <button class="add-line" onclick="onAddLine()">Add New Line</button>
-            <button class="switch-line" onclick="onSwitchLine()">Switch</button>
-        </div>
-        <a href="#" class="a-download" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+        <a href="#" class="a-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
     </section>
 
     <script src="js/services/util.service.js"></script>

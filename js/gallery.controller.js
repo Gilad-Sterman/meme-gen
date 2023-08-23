@@ -23,4 +23,5 @@ function onImgSelect(imgId) {
     renderMeme()
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
+    addListeners()
 }

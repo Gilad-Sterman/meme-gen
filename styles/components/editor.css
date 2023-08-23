@@ -3,17 +3,53 @@
 }
 
 .canvas-container {
-    background-color: black;
+    padding: 10px;
+    width: 90%;
+    border-radius: 10px;
     justify-content: center;
+    place-self: center;
+    background-color: rgb(9, 18, 63);
+    box-shadow: 10px 5px 5px rgb(7, 10, 28);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-color-change {
+    grid-row: 1;
+}
+
+.font-change {
+    grid-row: 1;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-font-change {
     width: 30px;
 }
 
-.add-line {
-    width: fit-content;
+.text-box {
+    width: 50vw;
+    align-self: center;
 }
+
+/* .add-line {
+    grid-row: 3;
+}
+
+.switch-line {
+    grid-row: 3;
+} */
 
 .a-download {
     place-self: center;

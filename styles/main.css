@@ -6,3 +6,6 @@
 @import url(./components/main-header.css);
 @import url(./components/editor.css);
 @import url(./components/gallery.css);
+
+/* Media Quarry */
+@import url(./setup/mq.css);
