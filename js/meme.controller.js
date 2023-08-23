@@ -15,7 +15,7 @@ function renderMeme() {
     lines.forEach(line => {
         drawText(line.txt, 10, line.pos, line.color, line.size)
     })
-    drawOutline(selectedLineIdx, pos, fontSize)
+    drawOutline(pos, fontSize)
 }
 
 function onWriteTxt(txt) {
@@ -47,11 +47,11 @@ function resizeCanvas() {
     renderMeme()
 }
 
-function drawOutline(lineIdx, pos, size) {
+function drawOutline(pos, size) {
     let y = pos - size
     setTimeout(() => {
         gCtx.strokeStyle = 'white'
-        gCtx.strokeRect(5, y, 340, 1.5 * size)
+        gCtx.strokeRect(5, y, gElCanvas.width, 1.5 * size)
     }, 50)
 }
 
@@ -78,7 +78,7 @@ function onSwitchLine() {
     renderMeme()
 }
 
-function onRemoveLine(){
+function onRemoveLine() {
     removeLine()
     setPlaceHolder()
     renderMeme()
@@ -103,13 +103,14 @@ function addTouchListeners() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    const { lines } = getMeme()
+    const { lines, selectedLineIdx } = getMeme()
     const clickedLineIdx = lines.findIndex(line => {
         return pos.x > 5 && pos.x < 345 && pos.y > (line.pos - line.size)
             && pos.y < (line.pos + line.size)
     })
     if (clickedLineIdx === -1) return
     switchLine(clickedLineIdx)
+    document.querySelector('.font-size').innerText = lines[clickedLineIdx].size
     renderMeme()
 }
 
