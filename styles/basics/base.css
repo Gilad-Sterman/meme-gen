@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgb(10, 129, 129);
+    background: linear-gradient(rgb(99, 119, 156) 0%,rgb(44, 58, 166) 35%,rgb(5, 38, 99) 100%);
 }
 
 img {

@@ -1,5 +1,6 @@
 .editor {
     gap: 10px;
+    height: 90vh;
 }
 
 .canvas-container {
@@ -9,25 +10,29 @@
     justify-content: center;
     align-items: center;
     place-self: center;
-    background-color: rgb(9, 18, 63);
+    background-color: rgb(16, 22, 53);
     box-shadow: -13px 11px 5px rgb(7, 10, 28);
 }
 
 .controls {
     display: flex;
     flex-direction: column;
-    /* width: 50%; */
     margin-top: 10px;
     align-self: center;
-    gap: 5px;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(16, 22, 53);
+    box-shadow: -10px 5px 5px rgb(7, 10, 28);
 }
 
 .line-controls {
     display: flex;
     gap: 10px;
     align-items: center;
+    justify-content: center;
+    margin-top: 5px;
 }
 
 .add-line {
@@ -41,7 +46,7 @@
     color: white;
     width: 30px;
     height: 30px;
-    background-color: rgb(25, 25, 88);
+    background-color: rgb(25, 25, 148);
 }
 
 .remove-line {
@@ -52,16 +57,19 @@
     background-color: red;
 }
 
-.btn-color-change {
-    grid-row: 1;
+.text-controls {
+    border-radius: 10px;
+    background-color: rgb(41, 139, 107);
+    margin-top: 5px;
 }
 
+
 .font-change {
-    grid-row: 1;
     display: flex;
     gap: 5px;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
 .btn-font-change {
@@ -69,14 +77,46 @@
 }
 
 .text-box {
+    padding: 5px;
     width: 50vw;
     align-self: center;
+    border-radius: 10px;
+}
+
+
+.text-align {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.font-select {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.stickers {
+    place-self: center;
+    width: max-content;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+.btn-sticker {
+    border: none;
+    background-color: none;
 }
 
 
 .btn-download {
     color: white;
     place-self: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-color: rgba(43, 43, 229, 0.823);
 }
 

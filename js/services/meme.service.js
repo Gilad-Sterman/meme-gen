@@ -41,7 +41,9 @@ var gMeme = {
 }
 
 var gNextLineIdx = 2
-let gDiff = 0
+var gDiff = 0
+var gStickerDiff = 0
+const gStickers = ['😜', '🤣', '😣', '😘']
 
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 1, 'baby': 4, 'dog': 2, 'celeb': 5 }
 
@@ -81,6 +83,15 @@ function addLine() {
     const size = gMeme.lines[gNextLineIdx].size
     gNextLineIdx++
     return size
+}
+
+function addSticker(val) {
+    const sticker = gStickers[val]
+    gMeme.lines.push(createSticker(sticker))
+    gStickerDiff++
+    // gMeme.selectedLineIdx = gNextLineIdx
+    // const size = gMeme.lines[gNextLineIdx].size
+    gNextLineIdx++
 }
 
 function switchLine(clickedLine) {
@@ -123,12 +134,23 @@ function setRandMeme() {
     return randImgId
 }
 
-function createLine() {
+function createLine(val = 'Enter New Text:') {
     return {
-        txt: 'Enter New Text:',
+        txt: val,
         size: 15,
         color: 'black',
         pos: 150 + (30 * gDiff),
+        font: 'Impact',
+        align: 'center'
+    }
+}
+
+function createSticker(val) {
+    return {
+        txt: val,
+        size: 30,
+        color: 'black',
+        pos: 150 + (30 * gStickerDiff),
         font: 'Impact',
         align: 'center'
     }

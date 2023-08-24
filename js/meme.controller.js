@@ -95,6 +95,11 @@ function onSetFont(val) {
     renderMeme()
 }
 
+function onAddSticker(val){
+    addSticker(val)
+    renderMeme()
+}
+
 function addListeners() {
     addMouseListeners()
     addTouchListeners()

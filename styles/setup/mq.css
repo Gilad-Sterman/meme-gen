@@ -9,13 +9,13 @@
 /* MEDIUM */
 @media (min-width: 690px) {
     .gallery {
-        /* grid-auto-flow: column; */
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .editor {
+        height: 80vh;
         display: grid;
-        grid-template-columns: 20px 2fr 1fr 20px;
+        grid-template-columns: 20px 3fr 2fr 20px;
     }
 
     .hide {
@@ -33,7 +33,8 @@
         display: flex;
         flex-direction: column;
         gap: 1em;
-        align-self: self-start;
+        justify-content: center;
+        align-self: self-end;
     }
 
     .text-box {
