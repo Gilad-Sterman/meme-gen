@@ -7,15 +7,17 @@
     width: 90%;
     border-radius: 10px;
     justify-content: center;
+    align-items: center;
     place-self: center;
     background-color: rgb(9, 18, 63);
-    box-shadow: 10px 5px 5px rgb(7, 10, 28);
+    box-shadow: -13px 11px 5px rgb(7, 10, 28);
 }
 
 .controls {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    /* width: 50%; */
+    margin-top: 10px;
     align-self: center;
     gap: 5px;
     justify-content: center;
@@ -29,19 +31,21 @@
 }
 
 .add-line {
+    color: white;
     width: 30px;
     height: 30px;
     background-color: green;
 }
 
 .switch-line {
+    color: white;
     width: 30px;
     height: 30px;
-    transform: rotate(90deg);
     background-color: rgb(25, 25, 88);
 }
 
 .remove-line {
+    color: white;
     width: 30px;
     height: 30px;
     font-weight: bold;
@@ -69,16 +73,11 @@
     align-self: center;
 }
 
-/* .add-line {
-    grid-row: 3;
-}
-
-.switch-line {
-    grid-row: 3;
-} */
 
 .btn-download {
+    color: white;
     place-self: center;
+    background-color: rgba(43, 43, 229, 0.823);
 }
 
 .a-download {

@@ -7,6 +7,7 @@ function onInit() {
 }
 
 function onToGallery() {
+    resetLInes()
     renderGallery()
 }
 
@@ -15,7 +16,7 @@ function readyForDownload() {
     const elModal = document.querySelector('dialog')
     drawImg(selectedImgId)
     lines.forEach(line => {
-        drawText(line.txt, 10, line.pos, line.color, line.size)
+        drawText(line.txt, 10, line.pos, line.color, line.size, line.font)
     })
     elModal.showModal()
 }
