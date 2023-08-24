@@ -6,6 +6,11 @@ function onInit() {
     renderGallery()
 }
 
+function onRandMeme() {
+    const imgId = setRandMeme()
+    onImgSelect(imgId)
+}
+
 function onToGallery() {
     resetLInes()
     renderGallery()
@@ -16,7 +21,7 @@ function readyForDownload() {
     const elModal = document.querySelector('dialog')
     drawImg(selectedImgId)
     lines.forEach(line => {
-        drawText(line.txt, 10, line.pos, line.color, line.size, line.font)
+        drawText(line.txt, line.pos, line.color, line.size, line.font, line.align)
     })
     elModal.showModal()
 }

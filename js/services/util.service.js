@@ -29,3 +29,15 @@ function getEvPos(ev) {
     return pos
 }
 
+function getRandTxt() {
+    const txts = ['The What?', 'Thats What I Said', 'U Mad', 'Craaazy']
+    const randIdx = getRandomIntInclusive(0, txts.length - 1)
+    return txts[randIdx]
+}
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min + 1)) + min
+}
+

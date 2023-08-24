@@ -2,8 +2,6 @@
 
 let gElCanvas
 let gCtx
-// let gTxtColor = 'black'
-// let gFontSize = 20
 
 function renderMeme() {
     const currMeme = getMeme()
@@ -13,7 +11,7 @@ function renderMeme() {
     setPlaceHolder()
     drawImg(selectedImgId)
     lines.forEach(line => {
-        drawText(line.txt, 200, line.pos, line.color, line.size, line.font, line.align)
+        drawText(line.txt, line.pos, line.color, line.size, line.font, line.align)
     })
     drawOutline(pos, fontSize)
 }
@@ -31,15 +29,15 @@ function drawImg(img) {
     }
 }
 
-function drawText(text, x, y, color, size, font, align) {
+function drawText(text, y, color, size, font, align) {
     setTimeout(() => {
         gCtx.lineWidth = 1
         gCtx.font = `${size}px ${font}`
         gCtx.textAlign = align
         gCtx.fillStyle = color
-        gCtx.fillText(text, x, y)
+        gCtx.fillText(text, gElCanvas.width / 2, y)
         gCtx.strokeStyle = 'white'
-        gCtx.strokeText(text, x, y)
+        gCtx.strokeText(text, gElCanvas.width / 2, y)
     }, 50)
 }
 

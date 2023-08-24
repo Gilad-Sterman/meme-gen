@@ -7,3 +7,31 @@
     border-radius: 10px;
     background-color: rgb(2, 61, 61);
 }
+
+.btn-rand {
+    width: max-content;
+    color: white;
+    background-color: rgb(10, 124, 124);
+    text-transform: uppercase;
+}
+
+.btn-rand:hover {
+    animation-name: wiggle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes wiggle {
+    from {
+        rotate: 0;
+    }
+
+    50% {
+        rotate: 30deg;
+    }
+
+    to {
+        rotate: -30deg;
+    }
+}

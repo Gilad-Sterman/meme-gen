@@ -27,7 +27,7 @@ var gMeme = {
             color: 'black',
             pos: 50,
             font: 'Impact',
-            align: 'right'
+            align: 'center'
         },
         {
             txt: 'Enter Second Line',
@@ -35,7 +35,7 @@ var gMeme = {
             color: 'red',
             pos: 300,
             font: 'Impact',
-            align: 'right'
+            align: 'center'
         }
     ]
 }
@@ -56,8 +56,8 @@ function getImgs() {
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
     gMeme.selectedLineIdx = 0
-    gMeme.lines[0].txt = 'Enter Your Text:'
-    gMeme.lines[1].txt = 'Enter Second Line'
+    // gMeme.lines[0].txt = 'Enter Your Text:'
+    // gMeme.lines[1].txt = 'Enter Second Line'
 }
 
 function setLIneTxt(txt) {
@@ -108,6 +108,21 @@ function setTextAlign(align) {
     gMeme.lines[gMeme.selectedLineIdx].align = align
 }
 
+function setRandMeme() {
+    const randImgId = getRandomIntInclusive(1, gImgs.length - 1)
+    gMeme.lines = [{
+        txt: getRandTxt(),
+        size: 30,
+        color: 'black',
+        pos: 50,
+        font: 'Impact',
+        align: 'center'
+    }]
+    gNextLineIdx = 1
+    gDiff = 0
+    return randImgId
+}
+
 function createLine() {
     return {
         txt: 'Enter New Text:',
@@ -115,7 +130,7 @@ function createLine() {
         color: 'black',
         pos: 150 + (30 * gDiff),
         font: 'Impact',
-        align: 'right'
+        align: 'center'
     }
 }
 
@@ -127,7 +142,7 @@ function resetLInes() {
             color: 'black',
             pos: 50,
             font: 'Impact',
-            align: 'right'
+            align: 'center'
         },
         {
             txt: 'Enter Second Line',
@@ -135,7 +150,7 @@ function resetLInes() {
             color: 'red',
             pos: 300,
             font: 'Impact',
-            align: 'right'
+            align: 'center'
         }
     ]
     gMeme.selectedLineIdx = 0
