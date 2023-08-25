@@ -1,0 +1,9 @@
+.search {
+    margin-bottom: 10px;
+}
+
+.btn-search-by {
+    color: aliceblue;
+    border: none;
+    background-color: rgba(0, 0, 255, 0);
+}

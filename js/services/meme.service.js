@@ -43,16 +43,26 @@ var gMeme = {
 var gNextLineIdx = 2
 var gDiff = 0
 var gStickerDiff = 0
+var gSearchKeyWord = ''
 const gStickers = ['😜', '🤣', '😣', '😘']
 
-var gKeywordSearchCountMap = { 'funny': 12, 'cat': 1, 'baby': 4, 'dog': 2, 'celeb': 5 }
+var gKeywordSearchCountMap = { 'funny': 6, 'cat': 3, 'baby': 4, 'dog': 2, 'celeb': 3 }
 
 function getMeme() {
     return gMeme
 }
 
 function getImgs() {
-    return gImgs
+    return gImgs.filter(img => img.keywords.find(keyWord => keyWord.includes(gSearchKeyWord)))
+}
+
+function getSearchMap() {
+    return gKeywordSearchCountMap
+}
+
+function setSearchBy(keyWord) {
+    gKeywordSearchCountMap[keyWord]++
+    gSearchKeyWord = keyWord
 }
 
 function setImg(imgId) {
@@ -131,6 +141,7 @@ function setRandMeme() {
     }]
     gNextLineIdx = 1
     gDiff = 0
+    gStickerDiff = 0
     return randImgId
 }
 

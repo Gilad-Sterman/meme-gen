@@ -4,6 +4,7 @@
 
 /* COMPONENTS */
 @import url(./components/main-header.css);
+@import url(./components/search.css);
 @import url(./components/editor.css);
 @import url(./components/gallery.css);
 @import url(./components/main-footer.css);
