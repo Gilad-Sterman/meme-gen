@@ -58,8 +58,6 @@ function getImgs() {
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
     gMeme.selectedLineIdx = 0
-    // gMeme.lines[0].txt = 'Enter Your Text:'
-    // gMeme.lines[1].txt = 'Enter Second Line'
 }
 
 function setLIneTxt(txt) {
@@ -89,8 +87,6 @@ function addSticker(val) {
     const sticker = gStickers[val]
     gMeme.lines.push(createSticker(sticker))
     gStickerDiff++
-    // gMeme.selectedLineIdx = gNextLineIdx
-    // const size = gMeme.lines[gNextLineIdx].size
     gNextLineIdx++
 }
 
@@ -102,6 +98,10 @@ function switchLine(clickedLine) {
     gMeme.selectedLineIdx++
     if (gMeme.selectedLineIdx >= gMeme.lines.length) gMeme.selectedLineIdx = 0
     return gMeme.lines[gMeme.selectedLineIdx].size
+}
+
+function setNewLinePos(pos) {
+    gMeme.lines[gMeme.selectedLineIdx].pos = pos.y
 }
 
 function removeLine() {
@@ -178,4 +178,5 @@ function resetLInes() {
     gMeme.selectedLineIdx = 0
     gDiff = 0
     gNextLineIdx = 2
+    gStickerDiff = 0
 }

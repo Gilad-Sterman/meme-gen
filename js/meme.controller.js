@@ -2,6 +2,7 @@
 
 let gElCanvas
 let gCtx
+let isDrag = false
 
 function renderMeme() {
     const currMeme = getMeme()
@@ -75,7 +76,6 @@ function onAddLine() {
 
 function onSwitchLine() {
     const lineSize = switchLine()
-    // const { selectedLineIdx, lines } = getMeme()
     document.querySelector('.font-size').innerText = lineSize
     setPlaceHolder()
     setFontSelect()
@@ -95,7 +95,7 @@ function onSetFont(val) {
     renderMeme()
 }
 
-function onAddSticker(val){
+function onAddSticker(val) {
     addSticker(val)
     renderMeme()
 }
@@ -107,14 +107,14 @@ function addListeners() {
 
 function addMouseListeners() {
     gElCanvas.addEventListener('mousedown', onDown)
-    // gElCanvas.addEventListener('mousemove', onMove)
-    // gElCanvas.addEventListener('mouseup', onUp)
+    gElCanvas.addEventListener('mousemove', onMove)
+    gElCanvas.addEventListener('mouseup', onUp)
 }
 
 function addTouchListeners() {
     gElCanvas.addEventListener('touchstart', onDown)
-    // gElCanvas.addEventListener('touchmove', onMove)
-    // gElCanvas.addEventListener('touchend', onUp)
+    gElCanvas.addEventListener('touchmove', onMove)
+    gElCanvas.addEventListener('touchend', onUp)
 }
 
 function onDown(ev) {
@@ -125,9 +125,40 @@ function onDown(ev) {
             && pos.y < (line.pos + line.size)
     })
     if (clickedLineIdx === -1) return
+    isDrag = true
     switchLine(clickedLineIdx)
+    document.body.style.cursor = 'grabbing'
     document.querySelector('.font-size').innerText = lines[clickedLineIdx].size
     setFontSelect()
+    renderMeme()
+}
+
+function onMove(ev) {
+    const pos = getEvPos(ev)
+    const { lines } = getMeme()
+    const hoveredLineIdx = lines.findIndex(line => {
+        return pos.x > 5 && pos.x < 345 && pos.y > (line.pos - line.size)
+            && pos.y < (line.pos + line.size)
+    })
+    if (hoveredLineIdx === -1) {
+        if (!isDrag) {
+            document.body.style.cursor = 'default'
+            return
+        }
+        // document.body.style.cursor = 'grabbing'
+        setNewLinePos(pos)
+        renderMeme()
+        return
+    }
+    document.body.style.cursor = (isDrag) ? 'grabbing' : 'grab'
+    // document.body.style.cursor = 'grabbing'
+}
+
+function onUp(ev) {
+    isDrag = false
+    const pos = getEvPos(ev)
+    setNewLinePos(pos)
+    document.body.style.cursor = 'default'
     renderMeme()
 }
 
