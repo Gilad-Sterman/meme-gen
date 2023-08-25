@@ -146,8 +146,8 @@ function onMove(ev) {
             return
         }
         // document.body.style.cursor = 'grabbing'
-        setNewLinePos(pos)
-        renderMeme()
+        // setNewLinePos(pos)
+        // renderMeme()
         return
     }
     document.body.style.cursor = (isDrag) ? 'grabbing' : 'grab'
@@ -155,6 +155,7 @@ function onMove(ev) {
 }
 
 function onUp(ev) {
+    if (!isDrag) return
     isDrag = false
     const pos = getEvPos(ev)
     setNewLinePos(pos)
