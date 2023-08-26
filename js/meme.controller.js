@@ -12,7 +12,8 @@ function renderMeme() {
     setPlaceHolder()
     drawImg(selectedImgId)
     lines.forEach(line => {
-        const posX = (line.posX) ? line.posX : gElCanvas.width / 2
+        // const posX = (line.posX) ? line.posX : gElCanvas.width / 2
+        const posX = line.posX
         drawText(line.txt, line.pos, line.color, line.size, line.font, line.align, posX)
     })
     drawOutline(pos, fontSize)

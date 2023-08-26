@@ -27,7 +27,8 @@ var gMeme = {
             color: 'black',
             pos: 50,
             font: 'Impact',
-            align: 'center'
+            align: 'center',
+            posX: 150
         },
         {
             txt: 'Enter Second Line',
@@ -35,7 +36,8 @@ var gMeme = {
             color: 'red',
             pos: 300,
             font: 'Impact',
-            align: 'center'
+            align: 'center',
+            posX: 150
         }
     ]
 }
@@ -138,7 +140,8 @@ function setRandMeme() {
         color: 'black',
         pos: 50,
         font: 'Impact',
-        align: 'center'
+        align: 'center',
+        posX: 150
     }]
     gNextLineIdx = 1
     gDiff = 0
@@ -153,7 +156,8 @@ function createLine(val = 'Enter New Text:') {
         color: 'black',
         pos: 150 + (30 * gDiff),
         font: 'Impact',
-        align: 'center'
+        align: 'center',
+        posX: 150
     }
 }
 
@@ -164,7 +168,8 @@ function createSticker(val) {
         color: 'black',
         pos: 150 + (30 * gStickerDiff),
         font: 'Impact',
-        align: 'center'
+        align: 'center',
+        posX: 150
     }
 }
 
@@ -176,7 +181,8 @@ function resetLInes() {
             color: 'black',
             pos: 50,
             font: 'Impact',
-            align: 'center'
+            align: 'center',
+            posX: 150
         },
         {
             txt: 'Enter Second Line',
@@ -184,7 +190,8 @@ function resetLInes() {
             color: 'red',
             pos: 300,
             font: 'Impact',
-            align: 'center'
+            align: 'center',
+            posX: 150
         }
     ]
     gMeme.selectedLineIdx = 0
