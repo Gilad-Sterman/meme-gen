@@ -111,13 +111,24 @@
     background-color: none;
 }
 
+.share {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
 .btn-download {
     color: white;
-    place-self: center;
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: rgba(43, 43, 229, 0.823);
+}
+
+.btn-share {
+    width: 100px;
+    height: fit-content;
+    color: white;
+    background-color: blueviolet;
 }
 
 .a-download {

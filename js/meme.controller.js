@@ -32,7 +32,7 @@ function drawImg(img) {
 
 function drawText(text, y, color, size, font, align) {
     setTimeout(() => {
-        gCtx.lineWidth = 1
+        gCtx.lineWidth = 0.2
         gCtx.font = `${size}px ${font}`
         gCtx.textAlign = align
         gCtx.fillStyle = color
@@ -145,13 +145,9 @@ function onMove(ev) {
             document.body.style.cursor = 'default'
             return
         }
-        // document.body.style.cursor = 'grabbing'
-        // setNewLinePos(pos)
-        // renderMeme()
         return
     }
     document.body.style.cursor = (isDrag) ? 'grabbing' : 'grab'
-    // document.body.style.cursor = 'grabbing'
 }
 
 function onUp(ev) {
