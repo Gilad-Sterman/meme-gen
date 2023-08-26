@@ -64,6 +64,6 @@
     }
 
     .editor {
-        grid-template-columns: 70px 3fr 2fr 70px;
+        grid-template-columns: 70px 4fr 3fr 200px;
     }
 }
