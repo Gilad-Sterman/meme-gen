@@ -21,7 +21,7 @@ function readyForDownload() {
     const elModal = document.querySelector('dialog')
     drawImg(selectedImgId)
     lines.forEach(line => {
-        drawText(line.txt, line.pos, line.color, line.size, line.font, line.align)
+        drawText(line.txt, line.pos, line.color, line.size, line.font, line.align, line.posX)
     })
     elModal.showModal()
 }
