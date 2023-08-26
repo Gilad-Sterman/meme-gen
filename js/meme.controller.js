@@ -12,7 +12,8 @@ function renderMeme() {
     setPlaceHolder()
     drawImg(selectedImgId)
     lines.forEach(line => {
-        drawText(line.txt, line.pos, line.color, line.size, line.font, line.align)
+        const posX = (line.posX) ? line.posX : gElCanvas.width / 2
+        drawText(line.txt, line.pos, line.color, line.size, line.font, line.align, posX)
     })
     drawOutline(pos, fontSize)
 }
@@ -30,15 +31,15 @@ function drawImg(img) {
     }
 }
 
-function drawText(text, y, color, size, font, align) {
+function drawText(text, y, color, size, font, align, x) {
     setTimeout(() => {
         gCtx.lineWidth = 0.2
         gCtx.font = `${size}px ${font}`
         gCtx.textAlign = align
         gCtx.fillStyle = color
-        gCtx.fillText(text, gElCanvas.width / 2, y)
+        gCtx.fillText(text, x, y)
         gCtx.strokeStyle = 'white'
-        gCtx.strokeText(text, gElCanvas.width / 2, y)
+        gCtx.strokeText(text, x, y)
     }, 50)
 }
 

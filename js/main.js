@@ -26,7 +26,6 @@ function readyForDownload() {
     elModal.showModal()
 }
 
-
 function onDownloadImg(elLink) {
     downloadImg(elLink)
     const elModal = document.querySelector('dialog')

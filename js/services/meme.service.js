@@ -112,6 +112,7 @@ function switchLine(clickedLine) {
 
 function setNewLinePos(pos) {
     gMeme.lines[gMeme.selectedLineIdx].pos = pos.y
+    gMeme.lines[gMeme.selectedLineIdx].posX = pos.x
 }
 
 function removeLine() {
