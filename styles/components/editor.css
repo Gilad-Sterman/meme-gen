@@ -145,3 +145,7 @@ dialog {
 .a-download:hover {
     color: var(--txtClrSecondary);
 }
+
+.hide {
+    display: none;
+}
