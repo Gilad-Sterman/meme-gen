@@ -8,14 +8,16 @@ function renderMeme() {
     const currMeme = getMeme()
     const { selectedImgId, selectedLineIdx, lines } = currMeme
     const pos = lines[selectedLineIdx].pos
+    const posX = lines[selectedLineIdx].posX
     const fontSize = lines[selectedLineIdx].size
+    const txt = lines[selectedLineIdx].txt
     setPlaceHolder()
     drawImg(selectedImgId)
     lines.forEach(line => {
         const posX = line.posX
         drawText(line.txt, line.pos, line.color, line.size, line.font, line.align, posX)
     })
-    drawOutline(pos, fontSize)
+    drawOutline(pos, fontSize, txt, posX)
 }
 
 function onWriteTxt(txt) {
@@ -49,11 +51,13 @@ function resizeCanvas() {
     renderMeme()
 }
 
-function drawOutline(pos, size) {
-    let y = pos - size
+function drawOutline(pos, size, txt, posX) {
     setTimeout(() => {
+        let y = pos - size
+        let width = gCtx.measureText(txt).width
+        let length = width + 3 * size
         gCtx.strokeStyle = 'white'
-        gCtx.strokeRect(5, y, gElCanvas.width - 10, 1.5 * size)
+        gCtx.strokeRect(posX - length / 2, y, length + size, 1.5 * size)
     }, 50)
 }
 

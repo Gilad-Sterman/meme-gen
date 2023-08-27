@@ -10,8 +10,8 @@
     justify-content: center;
     align-items: center;
     place-self: center;
-    background-color: rgb(16, 22, 53);
-    box-shadow: -13px 11px 5px rgb(7, 10, 28);
+    background-color: var(--clrPrimary);
+    box-shadow: var(--boxShadow);
 }
 
 .controls {
@@ -23,8 +23,8 @@
     align-items: stretch;
     padding: 5px;
     border-radius: 10px;
-    background-color: rgb(16, 22, 53);
-    box-shadow: -10px 5px 5px rgb(7, 10, 28);
+    background-color: var(--clrPrimary);
+    box-shadow: var(--boxShadow);
 }
 
 .line-controls {
@@ -36,30 +36,30 @@
 }
 
 .add-line {
-    color: white;
+    color: var(--txtClrPrimary);
     width: 30px;
     height: 30px;
-    background-color: green;
+    background-color: var(--clrAdd);
 }
 
 .switch-line {
-    color: white;
+    color: var(--txtClrPrimary);
     width: 30px;
     height: 30px;
-    background-color: rgb(25, 25, 148);
+    background-color: var(--clrSecondary);
 }
 
 .remove-line {
-    color: white;
+    color: var(--txtClrPrimary);
     width: 30px;
     height: 30px;
     font-weight: bold;
-    background-color: red;
+    background-color: var(--clrRemove);
 }
 
 .text-controls {
     border-radius: 10px;
-    background-color: rgb(41, 139, 107);
+    background-color: var(--clrSecondary-1);
     margin-top: 5px;
 }
 
@@ -101,7 +101,7 @@
     width: max-content;
     padding: 5px;
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--txtClrPrimary);
     margin-top: 5px;
     margin-bottom: 2px;
 }
@@ -118,17 +118,17 @@
 }
 
 .btn-download {
-    color: white;
+    color: var(--txtClrPrimary);
     margin-top: 5px;
     margin-bottom: 5px;
-    background-color: rgba(43, 43, 229, 0.823);
+    background-color: var(--clrSecondary);
 }
 
 .btn-share {
-    width: 100px;
+    width: 80px;
     height: fit-content;
-    color: white;
-    background-color: blueviolet;
+    color: var(--txtClrPrimary);
+    background-color: var(--clrSecondary1);
 }
 
 .a-download {
@@ -140,7 +140,12 @@
 }
 
 dialog {
+    color: var(--txtClrPrimary);
     width: 50vh;
     height: 20vh;
-    background-color: rgb(9, 114, 114);
+    background-color: var(--clrSecondary-1);
+}
+
+.a-download:hover {
+    color: var(--txtClrSecondary);
 }

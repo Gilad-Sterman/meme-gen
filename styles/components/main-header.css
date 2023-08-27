@@ -1,18 +1,20 @@
 .main-header {
+    position: sticky;
+    top: 0;
     align-items: center;
     padding: 10px;
     margin-bottom: 10px;
     gap: 10px;
     border-radius: 10px;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background: var(--clrFancy);
+    z-index: 10;
 }
 
 .btn-gallery {
+    color: var(--txtClrSecondary);
     text-transform: uppercase;
     font-weight: bold;
-    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgb(200, 250, 250) 35%, rgb(200, 200, 200) 100%);
-
+    background: var(--clrFancy1);
 }
 
 .btn-gallery:hover {
@@ -21,10 +23,10 @@
 }
 
 .btn-about {
+    color: var(--txtClrSecondary);
     font-weight: bold;
     text-transform: uppercase;
-    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgb(200, 250, 250) 35%, rgb(200, 200, 200) 100%);
-
+    background: var(--clrFancy1);
 }
 
 .btn-about:hover {
@@ -34,8 +36,8 @@
 
 .btn-rand {
     width: max-content;
-    color: white;
-    background-color: rgb(10, 124, 124);
+    color: var(--txtClrPrimary);
+    background-color: var(--clrSecondary-1);
     text-transform: uppercase;
 }
 

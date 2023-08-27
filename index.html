@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Meme Genaretor</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="https://kit.fontawesome.com/f4f1533e19.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -16,11 +17,14 @@
         <button class="btn-gallery" onclick="onToGallery()">Gallery</button>
         <button class="btn-about">About</button>
     </header>
-    <section class="search"></section>
+    <section class="search flex">
+        <input type="text" class="search-by-text" placeholder="&#128269 Search" oninput="onSearchBy(this.value)">
+        <div class="search-by-keyword"></div>
+    </section>
     <section class="gallery grid"></section>
     <section class="editor flex flex-column">
         <div class="canvas-container grid">
-            <canvas width="350" height="350" style="background-color: white;"></canvas>
+            <canvas width="350" height="350"></canvas>
         </div>
         <div class="controls">
             <input class="text-box" type="text" placeholder="Enter Text Here" oninput="onWriteTxt(value)">
@@ -73,7 +77,7 @@
     </section>
     <footer class="main-footer flex">
         <a href="#" class="logo">MEME-O</a>
-        <h4>Gilad Sterman</h4>
+        <h4>© Gilad Sterman 2023</h4>
         <div class="social-links"></div>
     </footer>
 

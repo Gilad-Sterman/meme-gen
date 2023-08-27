@@ -1,0 +1,14 @@
+:root {
+    --clrBg: linear-gradient(rgb(99, 119, 156) 0%, rgb(44, 58, 166) 35%, rgb(5, 38, 99) 100%);
+    --boxShadow: -13px 11px 5px rgb(7, 10, 28);
+    --clrPrimary: rgb(16, 22, 53);
+    --clrSecondary: rgba(43, 43, 229, 0.823);
+    --clrSecondary-1: rgb(41, 139, 107);
+    --clrSecondary1: blueviolet;
+    --txtClrPrimary: white;
+    --txtClrSecondary: rgb(73, 73, 73);
+    --clrAdd: green;
+    --clrRemove: red;
+    --clrFancy: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    --clrFancy1: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgb(200, 250, 250) 35%, rgb(200, 200, 200) 100%);
+}

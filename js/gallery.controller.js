@@ -32,6 +32,7 @@ function onImgSelect(imgId) {
 function renderSearchBy() {
     const searchMap = getSearchMap()
     const elSearch = document.querySelector('.search')
+    const elSearchBy = document.querySelector('.search-by-keyword')
     let strHtml = `
     <button class="btn-search-by" onclick="onSearchBy('funny')" style="font-size: ${3 * searchMap.funny}px;">Funny</button>
     <button class="btn-search-by" onclick="onSearchBy('cat')" style="font-size: ${3 * searchMap.cat}px;">Cat</button>
@@ -39,11 +40,13 @@ function renderSearchBy() {
     <button class="btn-search-by" onclick="onSearchBy('dog')" style="font-size: ${3 * searchMap.dog}px;">Dog</button>
     <button class="btn-search-by" onclick="onSearchBy('celeb')" style="font-size: ${3 * searchMap.celeb}px;">Celeb</button>
     <button class="btn-search-by" onclick="onSearchBy('')" style="color: aquamarine;">All</button>`
-    elSearch.innerHTML = strHtml
+    elSearchBy.innerHTML = strHtml
     elSearch.classList.remove('hide')
 }
 
 function onSearchBy(keyWord) {
+    const elSearchBy = document.querySelector('.search-by-text')
+    elSearchBy.value = keyWord 
     setSearchBy(keyWord)
     renderSearchBy()
     renderGallery()

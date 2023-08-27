@@ -1,9 +1,17 @@
 .search {
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
 }
 
+.search-by-text {
+    border-radius: 5px;
+    height: max-content;
+    padding: 5px;
+}
+
 .btn-search-by {
-    color: aliceblue;
+    color: var(--txtClrPrimary);
     border: none;
-    background-color: rgba(0, 0, 255, 0);
+    background-color: rgba(0, 0, 0, 0);
 }

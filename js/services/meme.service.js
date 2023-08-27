@@ -83,6 +83,14 @@ function setColor(val) {
 
 function fontChange(val) {
     gMeme.lines[gMeme.selectedLineIdx].size += val
+    if (gMeme.lines[gMeme.selectedLineIdx].size < 14) {
+        gMeme.lines[gMeme.selectedLineIdx].size = 14
+        return 14
+    }
+    if (gMeme.lines[gMeme.selectedLineIdx].size > 40) {
+        gMeme.lines[gMeme.selectedLineIdx].size = 40
+        return 40
+    }
     return gMeme.lines[gMeme.selectedLineIdx].size
 }
 
@@ -99,6 +107,7 @@ function addSticker(val) {
     const sticker = gStickers[val]
     gMeme.lines.push(createSticker(sticker))
     gStickerDiff++
+    gMeme.selectedLineIdx = gNextLineIdx
     gNextLineIdx++
 }
 
