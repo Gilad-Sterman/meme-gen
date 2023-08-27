@@ -135,10 +135,6 @@
     place-self: center;
 }
 
-.hide {
-    display: none;
-}
-
 dialog {
     color: var(--txtClrPrimary);
     width: 50vh;

@@ -48,6 +48,17 @@
     animation-direction: alternate;
 }
 
+.btn-drop-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: end;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 @keyframes wiggle {
     from {
         rotate: 0;

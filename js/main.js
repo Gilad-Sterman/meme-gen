@@ -30,4 +30,10 @@ function onDownloadImg(elLink) {
     downloadImg(elLink)
     const elModal = document.querySelector('dialog')
     elModal.close()
-} 
+}
+
+function toggleMenu(elBtn) {
+    elBtn.innerText = (elBtn.innerText === 'X') ? '☰' : 'X'
+    const elDropMenu = document.querySelector('.drop-menu')
+    elDropMenu.classList.toggle('hide')
+}
